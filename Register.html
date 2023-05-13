@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="./login.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navbar">
+                <div class="navbar1">
+                    <div class="flipkartlogo">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                            alt="flipkartlogo" />
+                        <p>Explore Plus+</p>
+                    </div>
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search for products, brands and more" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <button>Login</button>
+                    </div>
+                    <div class="options">
+                        <div class="seller">Become a Seller</div>
+                        <div class="more">More</div>
+                        <div class="cart">Cart</div>
+                    </div>
+                </div>
+            </div>
+            <div class="login">
+                <div class="loginform">
+                    <div class="loginimage">
+                        <div>
+                            <h2>Looks like you're new here!</h2>
+                            <p>Sign up with your mobile number to get started</p>
+                        </div>
+                        <img src="https://github.com/AbhishekAK411/flipkart-clone/blob/main/flipkart_login_image.JPG?raw=true"
+                            alt="">
+                    </div>
+                    <div class="loginpage">
+                        <form onsubmit="register(event)">
+                            <input id="name" type="text" placeholder="Enter Your Name" />
+                            <input id="email" type="email" placeholder="Enter Your Email" />
+                            <input id="password" type="password" placeholder="Enter Password" />
+                            <input id="confirmPassword" type="password" placeholder="Confirm your Password" />
+                            <p>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.
+                            </p>
+                            <input type="submit" value="Register" class="submit" />
+                        </form>
+                        <p>Already have an account? Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./userData.js"></script>
+    </body>
+
+</html>

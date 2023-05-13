@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flipkart</title>
+        <link rel="stylesheet" href="./login.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navbar">
+                <div class="navbar1">
+                    <div class="flipkartlogo">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                            alt="flipkartlogo" />
+                        <p>Explore Plus+</p>
+                    </div>
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search for products, brands and more" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <button id="switchUser">Login</button>
+                    </div>
+                    <div class="options">
+                        <div class="seller">Become a Seller</div>
+                        <div class="more">More</div>
+                        <div class="cart">Cart</div>
+                        <div id="logout"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+             window.onload = function () {
+                var activeUser = JSON.parse(localStorage.getItem("fKartActiveUser"));
+                if(activeUser){
+                    var convertLogIntoName = document.getElementById("switchUser");
+                    var logoutSwitch = document.getElementById("logout");
+                    var activefKartUserName = `<b>${activeUser.fKartUserName}</b>`;
+                    var logout = `<button class="logout" onclick="logout()">Log Out</button>`;
+                    convertLogIntoName.innerHTML = activefKartUserName;
+                    logoutSwitch.innerHTML = logout;
+                }else{
+                    alert("Login to Continue..")
+                }  
+            }    
+            function logout(){
+                localStorage.removeItem("fKartActiveUser");
+                window.location.reload();
+            }
+        </script>
+    </body>
+
+</html>
