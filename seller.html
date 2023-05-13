@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seller</title>
+        <link rel="stylesheet" href="./login.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navbar">
+                <div class="navbar1">
+                    <div class="flipkartlogo">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                            alt="flipkartlogo" />
+                        <p>Explore Plus+</p>
+                    </div>
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search for products, brands and more" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <button>Login</button>
+                    </div>
+                    <div class="options">
+                        <div class="seller">Become a Seller</div>
+                        <div class="more">More</div>
+                        <div class="cart">Cart</div>
+                    </div>
+                </div>
+            </div>
+            <div class="login">
+                <div class="loginform">
+                    <div class="loginimage">
+                        <div>
+                            <h2>Seller</h2>
+                            <p>Get access to your Orders, Wishlist and Recommendations</p>
+                        </div>
+                        <img src="https://github.com/AbhishekAK411/flipkart-clone/blob/main/flipkart_login_image.JPG?raw=true"
+                            alt="">
+                    </div>
+                    <div class="loginpage">
+                        <form onsubmit="addProduct(event)">
+                            <input id="productName" type="text" placeholder="Product Name" />
+                            <input id="productPrice" type="number" placeholder="Enter the price" />
+                            <input id="productImage" type="text" placeholder="Enter the url" />
+                            
+                            <p>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.
+                            </p>
+                            <input type="submit" value="Sell" class="submit" />
+                        </form>
+                        <p>New to Flipkart? Create an account</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function addProduct(event){
+                event.preventDefault();
+                var proName = document.getElementById("productName").value;
+                var proPrice = document.getElementById("productPrice").value;
+                var proImage = document.getElementById("productImage").value;
+                
+                var product = { proName, proPrice, proImage };
+                var addedProducts = JSON.parse(localStorage.getItem("fKartProducts")) || [];
+                addedProducts.push(product);
+    
+                localStorage.setItem("fKartProducts",JSON.stringify(addedProducts));
+    
+                alert("Added Succesfully");
+            }
+        </script>
+    </body>
+
+</html>
