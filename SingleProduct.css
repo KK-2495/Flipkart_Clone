@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.productImage{
+    width: 35%;
+    position: sticky;
+    background-color: white;
+}
+.productImage img{
+    width: 100%;
+}
+.cartButton{
+    display: flex;
+    justify-content: space-between;
+}
+.cartButton button{
+    width: 49%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.cartButton button:nth-child(1){
+    background-color: orange;
+}
+.cartButton button:nth-child(2){
+    background-color: orangered;
+}
+.productDetail{
+    /* border: 2px solid black; */
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+
+}
+.color{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.colors{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.colors i{
+    font-size: 50px;
+}
+.colors h3{
+    border: 2px solid lightgray;
+    padding: 10px 20px;
+}
+.offer p{
+    font-size: 15px;
+}
+.delivery{
+    display: flex;
+}
+.delivery p{
+    padding-left: 10px;
+}
+.pincode{
+    display: flex;
+    border-bottom: 2px solid #2874f0;
+    width: 30%;
+}
+.pincode input{
+    outline: none;
+    border: none;
+}
+.pincode p{
+    font-size: 14px;
+}
+.interested{
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+}
+.interest{
+    display: flex;
+    width: 98%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.interestList{
+    width: 30%;
+    /* border: 2px solid black; */
+    display: flex;
+    box-shadow: #64646f33 0px 7px 29px 0px;
+}
+.interestList img{
+    width: 30%;
+}
+.interestList div{
+    padding: 30px;
+}
+.interestList div button{
+    padding: 8px;
+    background-color: #2874f0;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}

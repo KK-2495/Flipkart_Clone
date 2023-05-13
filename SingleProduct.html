@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Single Page</title>
+        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="./Homepage.css">
+        <link rel="stylesheet" href="./multipleproduct.css">
+        <link rel="stylesheet" href="./SingleProduct.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navbar">
+                <div class="navbar1">
+                    <div class="flipkartlogo">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                            alt="flipkartlogo" />
+                        <p>Explore Plus+</p>
+                    </div>
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search for products, brands and more" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <button id="switchUser">Login</button>
+                    </div>
+                    <div class="options">
+                        <div class="seller">Become a Seller</div>
+                        <div class="more">More</div>
+                        <div class="cart">Cart</div>
+                        <div id="logout"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div id="productImage" class="productImage">
+                    <img src="" alt="">
+                    <div class="cartButton">
+                        <button>
+                            <i class="fa-solid fa-cart-shopping"></i>ADD TO CART</button>
+                        <button>
+                            <i class="fa-solid fa-bolt"></i>BUY NOW</button>
+                    </div>
+                </div>
+                <div class="productDetail">
+                    <h4 id="productName">STYLOGUE </h4>
+                    <p>Men Printed, Typography Round Neck Black T-Shirt</p>
+                    <small>Special pricing</small>
+                    <h3 id="productPrice">₹244</h3>
+                    <div class="color">
+                        <p>Color</p>
+                        <div class="colors"><i class="fa-solid fa-circle" style="color:red"></i>
+                        <i class="fa-solid fa-circle" style="color:blue"></i>
+                        <i class="fa-solid fa-circle" style="color:green"></i>
+                        <i class="fa-solid fa-circle" style="color:white"></i>
+                        <i class="fa-solid fa-circle" style="color:red"></i></div>
+                    </div>
+                    <div class="color">
+                        <p>Size</p>
+                        <div class="colors">
+                            <h3>S</h3>
+                            <h3>M</h3>
+                            <h3>L</h3>
+                            <h3>XL</h3>
+                            <h3>XXL</h3>
+                        </div>
+                    </div>
+                    <div class="offer">
+                        <h4>Available Offers</h4>
+                        <p><i class="fa-solid fa-tag" style="color:rgb(70, 206, 70)"></i><b>Special Price</b> Get extra 10% off (price inclusive of cashback/coupon)T&C</p>
+                        <p><i class="fa-solid fa-tag" style="color:rgb(70, 206, 70)"></i><b>Partner Offer</b>Sign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹500*Know More</p>
+                        <p><i class="fa-solid fa-tag" style="color:rgb(70, 206, 70)"></i><b>Partner Offer</b>Purchase now & get 1 surprise cashback coupon in FutureKnow More</p>
+                    </div>
+                    <div class="delivery">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZWxsaXBzZSBjeD0iOSIgY3k9IjE0LjQ3OCIgZmlsbD0iI0ZGRTExQiIgcng9IjkiIHJ5PSIzLjUyMiIvPjxwYXRoIGZpbGw9IiMyODc0RjAiIGQ9Ik04LjYwOSA3LjAxYy0xLjA4IDAtMS45NTctLjgyNi0xLjk1Ny0xLjg0NSAwLS40ODkuMjA2LS45NTguNTczLTEuMzA0YTIuMDIgMi4wMiAwIDAgMSAxLjM4NC0uNTRjMS4wOCAwIDEuOTU2LjgyNSAxLjk1NiAxLjg0NCAwIC40OS0uMjA2Ljk1OS0uNTczIDEuMzA1cy0uODY0LjU0LTEuMzgzLjU0ek0zLjEzIDUuMTY1YzAgMy44NzQgNS40NzkgOC45MjIgNS40NzkgOC45MjJzNS40NzgtNS4wNDggNS40NzgtOC45MjJDMTQuMDg3IDIuMzEzIDExLjYzNCAwIDguNjA5IDAgNS41ODMgMCAzLjEzIDIuMzEzIDMuMTMgNS4xNjV6Ii8+PC9nPjwvc3ZnPg==" alt="">
+                        <p>Deliver to</p>
+                    </div>
+                    <div class="pincode">
+                        <input type="text" placeholder="Enter delivery pincode" />
+                        <p>Check</p>
+                    </div>                    
+                </div>
+            </div>
+            <div class="interested">
+                <h3>You might be interested in
+                </h3>
+                <div class="interest">
+                    <div class="interestList">
+                        <img src="https://rukminim1.flixcart.com/image/400/400/kzn17680/trouser/3/k/n/34-kctr-dmy-2121-bk-fubar-original-imagbhwewuhcvgh2.jpeg?q=90" alt="">
+                        <div>
+                            <h3>Men's Trousers</h3>
+                            <p>Min. 50% Off</p>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                    <div class="interestList">
+                        <img src="https://rukminim1.flixcart.com/image/400/400/xif0q/t-shirt/g/9/a/xs-216571-the-souled-store-original-imagnd72evhnwpry.jpeg?q=70" alt="">
+                        <div>
+                            <h3>Men's Tshirts</h3>
+                            <p>Min. 50% Off</p>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                    <div class="interestList">
+                        <img src="https://rukminim1.flixcart.com/image/400/400/kvlaaa80/trouser/k/a/m/32-hltr004686-highlander-original-imag8gzsakuzzxhb.jpeg?q=90" alt="">
+                        <div>
+                            <h3>Men's Cargos</h3>
+                            <p>Min. 50% Off</p>
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="./footer.png" alt="">
+            </div>
+        </div>
+        <script>
+            window.onload = function () {
+                var activeUser = JSON.parse(localStorage.getItem("fKartActiveUser"));
+                if (activeUser) {
+                    var convertLogIntoName = document.getElementById("switchUser");
+                    var logoutSwitch = document.getElementById("logout");
+                    var activefKartUserName = `<b>${activeUser.fKartUserName}</b>`;
+                    var logout = `<button class="logout" onclick="logout()">Log Out</button>`;
+                    convertLogIntoName.innerHTML = activefKartUserName;
+                    logoutSwitch.innerHTML = logout;
+                } else {
+                    alert("Login to Continue..");
+                }
+                var product = JSON.parse(localStorage.getItem("singleProduct"));
+                var fKartProductName = document.getElementById("productName");
+                var fKartProductPrice = document.getElementById("productPrice");
+                var fKartProductImage = document.getElementById("productImage");
+                var productName = `<h4>${product.proName}</h4>`;
+                var productPrice = `<h3>₹${product.proPrice}</h3>`;
+                var productImage = `<img src="${product.proImage}" alt="">
+                    <div class="cartButton">
+                        <button>
+                            <i class="fa-solid fa-cart-shopping"></i>ADD TO CART</button>
+                        <button>
+                            <i class="fa-solid fa-bolt"></i>BUY NOW</button>
+                    </div>`;
+                fKartProductName.innerHTML = productName;
+                fKartProductPrice.innerHTML = productPrice;
+                fKartProductImage.innerHTML = productImage;
+                
+            }
+            function logout() {
+                localStorage.removeItem("fKartActiveUser");
+                window.location.reload();
+            }
+
+        </script>
+    </body>
+
+</html>

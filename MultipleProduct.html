@@ -67,13 +67,18 @@
                 }
                 // **********adding product************
                 var displayProducts = document.getElementById("productList");
-                var finalData = "";
+                var displayStructure = "";
 
                 var productsFromSeller = JSON.parse(localStorage.getItem("fKartProducts"));
                 for (var i = 0; i < productsFromSeller.length; i++) {
-                    finalData += `<div class="shoplist"><img src="${productsFromSeller[i].proImage}"/><h5>${productsFromSeller[i].proName}</h5><p>₹${productsFromSeller[i].proPrice}</p></div>`;
+                    displayStructure += `<div onclick='redirect(${JSON.stringify(productsFromSeller[i])})' class="shoplist"><img src="${productsFromSeller[i].proImage}"/><h5>${productsFromSeller[i].proName}</h5><p>₹${productsFromSeller[i].proPrice}</p></div>`;
                 }
-                displayProducts.innerHTML = finalData;
+                displayProducts.innerHTML = displayStructure;
+                
+            }
+            function redirect(fKartProduct){
+                localStorage.setItem("singleProduct",JSON.stringify(fKartProduct));
+                window.location.href = `./SingleProduct.html`;
             }
             function logout() {
                 localStorage.removeItem("fKartActiveUser");
