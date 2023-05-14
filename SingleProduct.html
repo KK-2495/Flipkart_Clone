@@ -32,7 +32,7 @@
                     <div class="options">
                         <div class="seller">Become a Seller</div>
                         <div class="more">More</div>
-                        <div class="cart">Cart</div>
+                        <div onclick="redirect()" class="cart">Cart</div>
                         <div id="logout"></div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                 var productPrice = `<h3>₹${product.proPrice}</h3>`;
                 var productImage = `<img src="${product.proImage}" alt="">
                     <div class="cartButton">
-                        <button>
+                        <button onclick = 'addCart(${JSON.stringify(product)})'>
                             <i class="fa-solid fa-cart-shopping"></i>ADD TO CART</button>
                         <button>
                             <i class="fa-solid fa-bolt"></i>BUY NOW</button>
@@ -150,6 +150,24 @@
                 fKartProductPrice.innerHTML = productPrice;
                 fKartProductImage.innerHTML = productImage;
                 
+            }
+            function addCart(product){
+                var fKart_Users = JSON.parse(localStorage.getItem("fKartUsers"));
+                var fKartCurrentUser = JSON.parse(localStorage.getItem("fKartActiveUser"));
+                for(var i=0; i<fKart_Users.length; i++){
+                    if(fKartCurrentUser.fKartUserEmail == fKart_Users[i].fKartUserEmail){
+                        if(fKart_Users[i].fKartProducts == undefined){
+                            fKart_Users[i].fKartProducts  = [product];
+                        }else{
+                            fKart_Users[i].fKartProducts.push(product);
+                        }
+                        alert("Product Added to Cart")
+                    }
+                }
+                localStorage.setItem("fKartUsers",JSON.stringify(fKart_Users));
+            }
+            function redirect(){
+                window.location.href = `./Cart.html`;
             }
             function logout() {
                 localStorage.removeItem("fKartActiveUser");

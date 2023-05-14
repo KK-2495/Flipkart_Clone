@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cart Page</title>
+        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="./Homepage.css">
+        <link rel="stylesheet" href="./multipleproduct.css">
+        <link rel="stylesheet" href="./SingleProduct.css">
+        <link rel="stylesheet" href="./Cart.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navbar">
+                <div class="navbar1">
+                    <div class="flipkartlogo">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                            alt="flipkartlogo" />
+                        <p>Explore Plus+</p>
+                    </div>
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search for products, brands and more" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <button id="switchUser">Login</button>
+                    </div>
+                    <div class="options">
+                        <div id="logout"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="productDetails">
+                    <div class="address">
+                        <p>From Saved Addresses</p>
+                        <button>Enter Delivery Pincode</button>
+                    </div>
+                    <div id="productImage" class="cartItems">
+                        <div class="cartImage">
+                            <img src="https://rukminim1.flixcart.com/image/224/224/xif0q/t-shirt/z/i/7/xl-vvh1-stylogue-original-imagh7ghf3z6ymkd.jpeg?q=90"
+                                alt="">
+                        </div>
+                        <div class="cartLabel">
+                            <h3 id="productName">STYLOGUE</h3>
+                            <p>Size :XL</p>
+                            <b>₹244</b>
+                            <div>
+                                <button>SAVE FOR LATER</button>
+                                <button>REMOVE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="priceDetails">
+                    <h4>PRICE DETAILS</h4>
+                    <div class="priceBreakage">
+                        <div>
+                            <p>Price</p>
+                            <p id="productPrice">₹ 4497</p>
+                        </div>
+                        <div>
+                            <p>Discount</p>
+                            <p>₹ -3196</p>
+                        </div>
+                        <div>
+                            <p>Delivery charges</p>
+                            <p>Free</p>
+                        </div>
+                    </div>
+                    <div class="totalCost">
+                        <h3>Total Amount</h3>
+                        <h3 id="totalCost">₹ 1301</h3>
+                    </div>
+                    <b>You will save ₹3,196 on this order
+                    </b>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.onload = function () {
+                var activeUser = JSON.parse(localStorage.getItem("fKartActiveUser"));
+                if (activeUser) {
+                    var convertLogIntoName = document.getElementById("switchUser");
+                    var logoutSwitch = document.getElementById("logout");
+                    var activefKartUserName = `<b>${activeUser.fKartUserName}</b>`;
+                    var logout = `<button class="logout" onclick="logout()">Log Out</button>`;
+                    convertLogIntoName.innerHTML = activefKartUserName;
+                    logoutSwitch.innerHTML = logout;
+                } else {
+                    alert("Login to Continue..");
+                }
+                // *******cart Item********/
+                var fKart_Users = JSON.parse(localStorage.getItem("fKartUsers"));
+                var fKartCurrentUser = JSON.parse(localStorage.getItem("fKartActiveUser"));
+                var fKartProductImage = document.getElementById("productImage");
+                var fKartProductName = document.getElementById("productName");
+                var fKartProductPrice = document.getElementById("productPrice");
+                var fKartTotalAmount = document.getElementById("totalCost");
+                var fKartProductList;
+
+                for (var i = 0; i < fKart_Users.length; i++) {
+                    if (fKartCurrentUser.fKartUserEmail == fKart_Users[i].fKartUserEmail) {
+                        fKartProductList = fKart_Users[i].fKartProducts;
+                    }
+                }
+                var productImageStructure = "";
+                for (var i = 0; i < fKartProductList.length; i++) {
+                    productImageStructure += `<div class="cartItems">
+                        <div class="cartImage">
+                            <img src="${fKartProductList[i].proImage}"
+                                alt="">
+                        </div>
+                        <div class="cartLabel">
+                            <h3>${fKartProductList[i].proName}</h3>
+                            <p>Size :XL</p>
+                            <b>₹ ${fKartProductList[i].proPrice}</b>
+                            <div>
+                                <button>SAVE FOR LATER</button>
+                                <button>REMOVE</button>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+                fKartProductImage.innerHTML = productImageStructure;
+                var sumProducts = 0;
+                for (var i = 0; i < fKartProductList.length; i++) {
+                    sumProducts += parseInt(fKartProductList[i].proPrice);
+                }
+                fKartTotalAmount.innerHTML = `₹${sumProducts}`;
+
+            }
+            function logout() {
+                localStorage.removeItem("fKartActiveUser");
+                window.location.reload();
+            }
+
+        </script>
+    </body>
+
+</html>

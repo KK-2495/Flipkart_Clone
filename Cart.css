@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.productDetails{
+    width: 60%;
+    height: 400px;
+}
+.address{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+.address p{
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+}
+.address button{
+    outline: none;
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: white;
+    font-weight: bold;
+    color: #2874f0;
+}
+
+.cartItems{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 20px;
+    margin-top: 2%;
+    border-bottom: 1px solid gray;
+    flex-direction: column;
+}
+.cartImage{
+    width: 20%;
+}
+.cartImage img{
+    width: 100%;
+}
+.cartLabel{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cartLabel button{
+    padding: 5px;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.priceDetails{
+    width: 35%;
+    background-color: white;
+}
+.priceDetails h4{
+    border-bottom: 1px solid rgb(189, 189, 189);
+    padding: 25px;
+
+}
+.priceBreakage{
+    padding: 25px;
+    border-bottom: 1px solid rgb(189, 189, 189);
+}
+.priceBreakage div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.totalCost{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+.priceDetails b{
+    color: green;
+    padding: 25px;
+}
